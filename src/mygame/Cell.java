@@ -13,6 +13,7 @@ import com.jme3.scene.Spatial;
  */
 public class Cell {
     public static Spatial model;
-    public static int offset;
+    public static int index;
+    // index can be used as an offset aswell as being able to move objects in relativity to a specific cell
     public static Vector3f position;
 }

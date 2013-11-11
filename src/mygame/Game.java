@@ -108,6 +108,12 @@ public class Game {
         timer += tpf;
         
         if(timer > 1) { timer = 0; }
+        
+        for(Cell c : cells)
+        {
+            c.model.setLocalTranslation(c.position);
+            
+        }
 
     }
 }

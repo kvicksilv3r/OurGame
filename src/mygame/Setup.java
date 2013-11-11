@@ -88,19 +88,20 @@ public class Setup {
         
         plane.setMaterial(modelmat);       
 
-        Main.app.getRoot().attachChild(plane);
+        //Main.app.getRoot().attachChild(plane);
         
-        Game.game.cells = new ArrayList<Cell>();
-        Cell.model = plane.clone();
+        Game.game.cells = new ArrayList<Cell>();        
         
        for(int i = 0; i < 9; i++)
         {
             Cell c = new Cell();
-            c.position = new Vector3f(0,0, -i*(Game.extent.z*2));
-            c.model = plane;
-            c.offset = i;
-            Game.game.cells.add(i, new Cell());
-        }
+            c.position = new Vector3f(0,0, -i*(Game.extent.z*2));            
+            c.model = plane.clone();
+            //c.model.setLocalTranslation(c.position);
+            c.index = i;
+            Main.app.getRootNode().attachChild(c.model);            
+            Game.game.cells.add(c);
+        } 
            
         // </editor-fold>  
         
