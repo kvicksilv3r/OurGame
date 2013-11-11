@@ -1,6 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * This is where the magic happens, mess around with what you want, but
+ * don't commit anjything to the git, i don't want to break things even more xD
  */
 package mygame;
 
@@ -19,6 +19,11 @@ import com.jme3.scene.Spatial;
 import com.jme3.scene.shape.Box;
 import java.util.ArrayList;
 import java.util.List;
+import static mygame.Game.height;
+import static mygame.Game.player;
+import static mygame.Game.thatpos;
+import static mygame.Game.thispos;
+import static mygame.Game.timer;
 
 public class Game {
     
@@ -112,7 +117,7 @@ public class Game {
         for(Cell c : cells)
         {
             c.model.setLocalTranslation(c.position);
-            
+             
         }
 
     }

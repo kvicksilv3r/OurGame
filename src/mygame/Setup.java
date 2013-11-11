@@ -1,5 +1,8 @@
 package mygame;
 
+//Fixes all the shit that just needs to be done once, like setting up light and 
+//positioning the character
+
 import com.jme3.asset.AssetManager;
 import com.jme3.bounding.BoundingBox;
 import com.jme3.light.AmbientLight;
@@ -12,6 +15,12 @@ import com.jme3.math.Vector3f;
 import com.jme3.scene.Spatial;
 import java.util.ArrayList;
 import java.util.List;
+import static mygame.Setup.blu;
+import static mygame.Setup.grn;
+import static mygame.Setup.modelmat;
+import static mygame.Setup.pl;
+import static mygame.Setup.plane;
+import static mygame.Setup.red;
 
 public class Setup {
     
@@ -35,11 +44,14 @@ public class Setup {
         //Main.app.getRoot().addLight(al);
         
         DirectionalLight dl = new DirectionalLight();
+        //Fap around here to change the overall color 
         dl.setColor(ColorRGBA.Orange);
         dl.setDirection(new Vector3f(-1, -1, -1));
-        //Main.app.getRoot().addLight(dl);
+        // Comment this out to remove the overall color (make everything black/white)
+        Main.app.getRoot().addLight(dl);
         
         pl = new PointLight();
+        //Mess around with this to change the color of the moving light
         pl.setColor(ColorRGBA.White);
         pl.setPosition(new Vector3f(-100, 4, 0));
         Main.app.getRoot().addLight(pl);

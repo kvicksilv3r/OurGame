@@ -1,6 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * We dont need this class right now, might need to do i later
+ * 
  */
 package mygame;
 
