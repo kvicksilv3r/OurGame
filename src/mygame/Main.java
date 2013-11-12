@@ -39,7 +39,7 @@ public class Main extends SimpleApplication {
         this.cam.lookAt(new Vector3f(0, 0.5f, 0), new Vector3f(0,1,0));         
         g.inputManager = inputManager;
         g.rootNode = rootNode;
-        g.simpleInitApp();
+        g.gameInit();       
     }
 
     @Override

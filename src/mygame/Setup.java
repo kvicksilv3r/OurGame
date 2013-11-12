@@ -104,7 +104,7 @@ public class Setup {
         
         Game.game.cells = new ArrayList<Cell>();        
         
-       for(int i = 0; i < 9; i++)
+        for(int i = 0; i < 9; i++)
         {
             Cell c = new Cell();
             c.position = new Vector3f(0,0, -i*(Game.extent.z*2));            
@@ -114,6 +114,8 @@ public class Setup {
             Main.app.getRootNode().attachChild(c.model);            
             Game.game.cells.add(c);
         } 
+
+       
            
         // </editor-fold>  
         

@@ -42,7 +42,7 @@ public class Game {
         Game.game = this;
     }
     
-    public void simpleInitApp() {
+    public void gameInit() {
         player.setMaterial(Setup.modelmat);
         rootNode.attachChild(player);
         initKeys();
@@ -114,11 +114,16 @@ public class Game {
         
         if(timer > 1) { timer = 0; }
         
-        for(Cell c : cells)
+       /* for(int i = 0; i < 9; i++)
+        {
+            Cell c = cells.get(i);
+            c.model.setLocalTranslation(c.position);            
+        } */
+        
+       /* for(Cell c : cells)
         {
             c.model.setLocalTranslation(c.position);
-             
-        }
+        } */
 
     }
 }
