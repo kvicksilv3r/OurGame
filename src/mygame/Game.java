@@ -31,13 +31,12 @@ public class Game {
 
     public InputManager inputManager;
     public Node rootNode;
-    public static Spatial player;
-    public static Spatial[] spatlist = new Spatial[9];    
+    public static Spatial player;   
     public static Vector3f extent;
     public static float timer;
     
     public ArrayList<Cell> cells;
-
+    
     public Game() {
         Game.game = this;
     }
@@ -120,10 +119,21 @@ public class Game {
             c.model.setLocalTranslation(c.position);            
         } */
         
-       /* for(Cell c : cells)
-        {
+        for(Cell c : cells)          
+        {            
             c.model.setLocalTranslation(c.position);
-        } */
+            c.position.z += extent.z/30;
+            
+            
+            if(c.model.getLocalTranslation().z > extent.z*2)
+            {
+                c.model.setLocalTranslation(0,0,-(cells.size()-1)*extent.z*2);
+            }
+            
+            c.position = c.model.getLocalTranslation();
+            
+        } 
 
+        
     }
 }

@@ -63,6 +63,7 @@ public class Setup {
         Game.player.scale(0.3f);
         Game.player.setLocalTranslation(0, 0.5f, 0);
         Game.player.rotate(FastMath.QUARTER_PI, FastMath.PI, 0);
+        Game.player.setMaterial(modelmat);        
         // </editor-fold>
         
         // <editor-fold defaultstate="collapsed" desc="Materials">
@@ -96,28 +97,32 @@ public class Setup {
         
         Game.extent = ((BoundingBox) plane.getWorldBound()).getExtent(new Vector3f());
         
-        plane = aM.loadModel("Models/plane.j3o");
-        
-        plane.setMaterial(modelmat);       
-
-        //Main.app.getRoot().attachChild(plane);
+        plane.setMaterial(modelmat);
         
         Game.game.cells = new ArrayList<Cell>();        
         
         for(int i = 0; i < 9; i++)
         {
             Cell c = new Cell();
-            c.position = new Vector3f(0,0, -i*(Game.extent.z*2));            
+            c.position = new Vector3f(0,0, -(Game.extent.z*2)*i);
             c.model = plane.clone();
-            //c.model.setLocalTranslation(c.position);
-            c.index = i;
+            c.index = i;  
+            
+            if(i == 2 || i == 5 || i == 8)
+            {
+                c.model.setMaterial(red);
+            }
+            else if( i == 1 || i == 4 || i == 7)
+            {
+                c.model.setMaterial(grn);
+            }
+            else{
+                c.model.setMaterial(blu);
+            }
+            
             Main.app.getRootNode().attachChild(c.model);            
             Game.game.cells.add(c);
-        } 
-
-       
-           
+        }
         // </editor-fold>  
-        
     }
 }
