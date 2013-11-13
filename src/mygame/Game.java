@@ -113,27 +113,23 @@ public class Game {
         
         if(timer > 1) { timer = 0; }
         
-       /* for(int i = 0; i < 9; i++)
-        {
-            Cell c = cells.get(i);
-            c.model.setLocalTranslation(c.position);            
-        } */
-        
         for(Cell c : cells)          
         {            
             c.model.setLocalTranslation(c.position);
-            c.position.z += extent.z/30;
+            c.position.z += extent.z * tpf;
             
             
             if(c.model.getLocalTranslation().z > extent.z*2)
             {
                 c.model.setLocalTranslation(0,0,-(cells.size()-1)*extent.z*2);
+                c.last = true;
+                
+                //This is experimental
+                Spawner.spawnProps();
             }
             
             c.position = c.model.getLocalTranslation();
             
-        } 
-
-        
+        }         
     }
 }

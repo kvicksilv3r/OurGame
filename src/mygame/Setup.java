@@ -12,7 +12,9 @@ import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.FastMath;
 import com.jme3.math.Vector3f;
+import com.jme3.scene.Geometry;
 import com.jme3.scene.Spatial;
+import com.jme3.scene.shape.Box;
 import java.util.ArrayList;
 import java.util.List;
 import static mygame.Setup.blu;
@@ -123,6 +125,15 @@ public class Setup {
             Main.app.getRootNode().attachChild(c.model);            
             Game.game.cells.add(c);
         }
+        // </editor-fold>  
+        
+        // <editor-fold defaultstate="collapsed" desc="Props">
+        Box b = new Box(1, 1, 1);
+        Geometry geom = new Geometry("Box", b);
+
+        geom.setMaterial(blu);
+
+        Main.app.getRootNode().attachChild(geom);        
         // </editor-fold>  
     }
 }
