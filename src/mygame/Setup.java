@@ -102,6 +102,7 @@ public class Setup {
         plane.setMaterial(modelmat);
         
         Game.game.cells = new ArrayList<Cell>();        
+        Game.game.boxs = new ArrayList<Boxes>();
         
         for(int i = 0; i < 9; i++)
         {
@@ -126,14 +127,8 @@ public class Setup {
             Game.game.cells.add(c);
         }
         // </editor-fold>  
+
+        Spawner.spawnProps(8);
         
-        // <editor-fold defaultstate="collapsed" desc="Props">
-        Box b = new Box(1, 1, 1);
-        Geometry geom = new Geometry("Box", b);
-
-        geom.setMaterial(blu);
-
-        Main.app.getRootNode().attachChild(geom);        
-        // </editor-fold>  
     }
 }

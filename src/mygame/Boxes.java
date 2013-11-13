@@ -10,9 +10,9 @@ public class Boxes {
     Box b = new Box(0.5f,0.5f,0.5f);
     
     public  Geometry geom = new Geometry("Box", b);
+    
     public  int index;
     // index can be used as an offset aswell as being able to move objects in relativity to a specific cell
-    public  Vector3f position;
     public Vector3f offsetPos;
 
 

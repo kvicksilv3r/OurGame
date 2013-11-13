@@ -36,6 +36,7 @@ public class Game {
     public static float timer;
     
     public ArrayList<Cell> cells;
+    public ArrayList<Boxes> boxs;
     
     public Game() {
         Game.game = this;
@@ -115,21 +116,42 @@ public class Game {
         
         for(Cell c : cells)          
         {            
+            //Tell the cells to get to their specified position
             c.model.setLocalTranslation(c.position);
+            // Sets the speed of the cells. Its based on cell-length and framerate/time per frame
             c.position.z += extent.z * tpf;
             
             
             if(c.model.getLocalTranslation().z > extent.z*2)
             {
+                for(Boxes b : boxs)
+                {
+                    if(b.index == c.index)
+                    {
+                        rootNode.detachChild(b.geom);
+                    }
+                }
+                
                 c.model.setLocalTranslation(0,0,-(cells.size()-1)*extent.z*2);
                 c.last = true;
                 
                 //This is experimental
-                Spawner.spawnProps();
+                Spawner.spawnProps(c.index);
             }
             
             c.position = c.model.getLocalTranslation();
             
-        }         
+            for(Boxes b : boxs)
+            {
+                if(b.index == c.index)
+                {
+                    b.geom.setLocalTranslation(new Vector3f(c.position.x + b.offsetPos.x - extent.x, c.position.y + b.offsetPos.y, c.position.z + b.offsetPos.z - extent.z));
+                }
+            }
+            
+        } 
+        
+
+        
     }
 }

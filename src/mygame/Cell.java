@@ -6,10 +6,6 @@ package mygame;
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Spatial;
 
-/**
- *
- * @author stoscheline2150
- */
 public class Cell {
     public  Spatial model;
     public  int index;

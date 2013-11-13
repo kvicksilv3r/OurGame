@@ -15,15 +15,18 @@ import com.jme3.scene.shape.Box;
  */
 public class Spawner {
 
-    public static float randx;
-    public static float randy;
-    public static float randz;    
-    
-    
-    public static void spawnProps()
+
+    public static void spawnProps(int index)
     {
-        //Add a randomizer and random 3 numbers. create a new Box at the position of the last cell and add the random
-        //numbers to that position
+        //Creates a new box, assigns a material, gives ít an offsetposition, number that tells there if will be in 
+        // relativity to the cells, it gives the box the same index as the cell it belongs to
+        
+        Boxes b = new Boxes();
+        b.geom.setMaterial(Setup.modelmat);
+        b.offsetPos = new Vector3f(FastMath.nextRandomFloat() * 2*Game.extent.x, 2, FastMath.nextRandomFloat()* 2 * Game.extent.z);
+        b.index = index;
+        Game.game.boxs.add(b);
+        Main.app.getRootNode().attachChild(b.geom);        
     }
     
 }
