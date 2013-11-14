@@ -63,7 +63,7 @@ public class Setup {
         // <editor-fold defaultstate="collapsed" desc="Player">
         Game.player = aM.loadModel("Models/Reeaper.j3o");          
         Game.player.scale(0.3f);
-        Game.player.setLocalTranslation(0, 0.5f, 0);
+        Game.player.setLocalTranslation(0, 1.5f, 0);       
         Game.player.rotate(FastMath.QUARTER_PI, FastMath.PI, 0);
         Game.player.setMaterial(modelmat);        
         // </editor-fold>

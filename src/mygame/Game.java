@@ -11,6 +11,7 @@ import com.jme3.input.controls.AnalogListener;
 import com.jme3.input.controls.KeyTrigger;
 import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
+import com.jme3.math.FastMath;
 import com.jme3.math.Vector3f;
 import com.jme3.renderer.RenderManager;
 import com.jme3.scene.Geometry;
@@ -34,6 +35,9 @@ public class Game {
     public static Spatial player;   
     public static Vector3f extent;
     public static float timer;
+    public float sinx;
+    public Vector3f playerPos;
+    public static Vector3f deafaultPos = new Vector3f(0, 1.5f, 0);
     
     public ArrayList<Cell> cells;
     public ArrayList<Boxes> boxs;
@@ -45,6 +49,7 @@ public class Game {
     public void gameInit() {
         player.setMaterial(Setup.modelmat);
         rootNode.attachChild(player);
+        playerPos = player.getLocalTranslation();
         initKeys();
     }
     
@@ -74,45 +79,44 @@ public class Game {
     public void onAnalog(String name, float value, float tpf) {
 
         if (name.equals("UP")) {
-        /*if(!goingUp && !goingDown)
+        if(!goingUp && !goingDown)
         {
         goingUp = true;        
-        sins = 0.55f; 
-        }*/          
-            thispos -= 1;
-            Setup.pl.setPosition(new Vector3f(thatpos,height, thispos));
+        sinx = 0.55f; 
+        }          
+
         }
         
         if (name.equals("LEFT")) {         
-          //player.setLocalTranslation(v.x - value*speed, v.y, v.z);
-            thatpos -= 1;
-            Setup.pl.setPosition(new Vector3f(thatpos,height, thispos));
+          player.setLocalTranslation(playerPos.x - value * 3, playerPos.y, playerPos.z);
+
         }
         
         if (name.equals("RIGHT")) {          
-         // player.setLocalTranslation(v.x + value*speed, v.y, v.z);
-            thatpos += 1;
-            Setup.pl.setPosition(new Vector3f(thatpos,height,thispos));
+         player.setLocalTranslation(playerPos.x + value * 3, playerPos.y, playerPos.z);
+
         }
         
         if (name.equals("DOWN")) {          
-         /* if(!goingDown && !goingUp)
+        if(!goingDown && !goingUp)
         {
         goingDown = true;        
-        sins = 0.55f; 
+        sinx = 0.55f; 
         }
-        */
-            thispos += 1;
-            Setup.pl.setPosition(new Vector3f(thatpos,height, thispos));
         }
       }
     };
 
     public void gameUpdate(float tpf) {
        
+        playerPos = player.getLocalTranslation(); 
         timer += tpf;
         
+        sinx += 0.1;
+        
         if(timer > 1) { timer = 0; }
+        
+        // <editor-fold defaultstate="collapsed" desc="Cell for-loop">
         
         for(Cell c : cells)          
         {            
@@ -120,7 +124,6 @@ public class Game {
             c.model.setLocalTranslation(c.position);
             // Sets the speed of the cells. Its based on cell-length and framerate/time per frame
             c.position.z += extent.z * tpf;
-            
             
             if(c.model.getLocalTranslation().z > extent.z*2)
             {
@@ -150,6 +153,28 @@ public class Game {
             }
             
         } 
+        
+        // </editor-fold>
+        
+               
+        if(goingUp) 
+        {
+            player.move(0, FastMath.sin(sinx*1.75f)/7,0);
+            
+            if(playerPos.y < deafaultPos.y)
+            {
+                goingUp = false;
+            }
+        }        
+        if(goingDown)
+        {
+            player.move(0, -FastMath.sin(sinx*1.9f)/5,0);
+            
+            if(playerPos.y > deafaultPos.y)
+            {
+                goingDown = false;
+            }
+        }
         
 
         
