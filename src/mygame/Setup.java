@@ -9,9 +9,11 @@ import com.jme3.light.AmbientLight;
 import com.jme3.light.DirectionalLight;
 import com.jme3.light.PointLight;
 import com.jme3.material.Material;
+import com.jme3.material.RenderState.BlendMode;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.FastMath;
 import com.jme3.math.Vector3f;
+import com.jme3.renderer.queue.RenderQueue.Bucket;
 import com.jme3.scene.Geometry;
 import com.jme3.scene.Spatial;
 import com.jme3.scene.shape.Box;
@@ -28,8 +30,6 @@ public class Setup {
     
     //public static Spatial player;
     public static Spatial plane;
-    public static Spatial plane2;
-    public static Spatial plane3;
     public static Material modelmat;
     public static Material red;
     public static Material blu;
@@ -78,7 +78,7 @@ public class Setup {
         //modelmat.setTexture("DiffuseMap", aM.loadTexture("Textures/chessboard.png")); 
         //modelmat.setTexture("SpecularMap", aM.loadTexture("Textures/chessboard.png")); 
         //modelmat.setTexture("NormalMap", aM.loadTexture("Textures/chessboard.png")); 
-        //modelmat.setTexture("ParallaxMap", aM.loadTexture("Textures/chessboard.png")); 
+        //modelmat.setTexture("ParallaxMap", aM.loadTexture("Textures/chessboard.png"));
         
         red = new Material(aM, 
                 "Common/MatDefs/Misc/Unshaded.j3md");  
@@ -91,9 +91,26 @@ public class Setup {
         grn.setColor("Color", ColorRGBA.Green);
         //-----------------
         
+        // </editor-fold>  
+        
+        // <editor-fold defaultstate="collapsed" desc="Model Loader">
+        
         plane = aM.loadModel("Models/plane.j3o");
+        mygame.Props.Props.tombstone1 = aM.loadModel("Models/Tombstone1.j3o");
+        mygame.Props.Props.ghost = aM.loadModel("Models/ghost.j3o");
+        mygame.Props.Props.tree = aM.loadModel("Models/tree.j3o");
         
         // </editor-fold>  
+        
+        // <editor-fold defaultstate="collapsed" desc="Props">
+        
+        Game.game.props = new ArrayList<mygame.Props.Prop>();
+        mygame.Props.Props.tombstone1.scale(0.5f);
+        mygame.Props.Props.ghost.scale(0.5f);
+        mygame.Props.Props.tree.scale(0.5f);
+        
+        
+        // </editor-fold>        
         
         // <editor-fold defaultstate="collapsed" desc="Planes/Cells">
         
@@ -101,8 +118,7 @@ public class Setup {
         
         plane.setMaterial(modelmat);
         
-        Game.game.cells = new ArrayList<Cell>();        
-        Game.game.boxs = new ArrayList<Boxes>();
+        Game.game.cells = new ArrayList<Cell>();
         
         for(int i = 0; i < 9; i++)
         {
@@ -127,7 +143,7 @@ public class Setup {
             Game.game.cells.add(c);
         }
         // </editor-fold>  
-
+        
         Spawner.spawnProps(8);
         
     }

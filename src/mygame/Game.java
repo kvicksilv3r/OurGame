@@ -14,6 +14,7 @@ import com.jme3.math.ColorRGBA;
 import com.jme3.math.FastMath;
 import com.jme3.math.Vector3f;
 import com.jme3.renderer.RenderManager;
+import com.jme3.renderer.queue.RenderQueue.Bucket;
 import com.jme3.scene.Geometry;
 import com.jme3.scene.Node;
 import com.jme3.scene.Spatial;
@@ -40,7 +41,7 @@ public class Game {
     public static Vector3f deafaultPos = new Vector3f(0, 1.5f, 0);
     
     public ArrayList<Cell> cells;
-    public ArrayList<Boxes> boxs;
+    public ArrayList<mygame.Props.Prop> props;
     
     public Game() {
         Game.game = this;
@@ -127,11 +128,11 @@ public class Game {
             
             if(c.model.getLocalTranslation().z > extent.z*2)
             {
-                for(Boxes b : boxs)
+                for(mygame.Props.Prop p : props)
                 {
-                    if(b.index == c.index)
+                    if(p.index == c.index)
                     {
-                        rootNode.detachChild(b.geom);
+                        rootNode.detachChild(p.model);
                     }
                 }
                 
@@ -144,11 +145,12 @@ public class Game {
             
             c.position = c.model.getLocalTranslation();
             
-            for(Boxes b : boxs)
+            for(mygame.Props.Prop p : props)
             {
-                if(b.index == c.index)
+                if(p.index == c.index)
                 {
-                    b.geom.setLocalTranslation(new Vector3f(c.position.x + b.offsetPos.x - extent.x, c.position.y + b.offsetPos.y, c.position.z + b.offsetPos.z - extent.z));
+                    p.model.setLocalTranslation(new Vector3f(c.position.x + p.offsetPos.x - extent.x, c.position.y + p.offsetPos.y, c.position.z + p.offsetPos.z - extent.z));
+
                 }
             }
             
@@ -161,7 +163,7 @@ public class Game {
         {
             player.move(0, FastMath.sin(sinx*1.75f)/7,0);
             
-            if(playerPos.y < deafaultPos.y)
+            if(playerPos.y <= deafaultPos.y)
             {
                 goingUp = false;
             }
@@ -170,7 +172,7 @@ public class Game {
         {
             player.move(0, -FastMath.sin(sinx*1.9f)/5,0);
             
-            if(playerPos.y > deafaultPos.y)
+            if(playerPos.y >= deafaultPos.y)
             {
                 goingDown = false;
             }

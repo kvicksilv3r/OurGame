@@ -1,4 +1,6 @@
-package mygame;
+package mygame.Props;
+
+
 
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Geometry;

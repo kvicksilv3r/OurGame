@@ -8,7 +8,6 @@ import com.jme3.renderer.RenderManager;
 import com.jme3.scene.Node;
 import com.jme3.system.AppSettings;
 
-
 public class Main extends SimpleApplication {
 
     public static Main app;    
