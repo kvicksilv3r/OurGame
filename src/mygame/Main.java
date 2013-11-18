@@ -25,14 +25,10 @@ public class Main extends SimpleApplication {
     Game g;
 
     @Override
-    public void simpleInitApp() {
-                
-        settings.setFrameRate(30);        
-        app.setSettings(settings);
-        
+    public void simpleInitApp() {        
         g = new Game();
         
-        Setup.setItUp(assetManager);        
+        Setup.setItUp(assetManager, rootNode);        
         this.flyCam.setEnabled(false);
         this.cam.setLocation(new Vector3f(0,3,7));
         //this.cam.setLocation(new Vector3f(30,30,35));

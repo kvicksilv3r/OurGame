@@ -15,8 +15,10 @@ import com.jme3.math.FastMath;
 import com.jme3.math.Vector3f;
 import com.jme3.renderer.queue.RenderQueue.Bucket;
 import com.jme3.scene.Geometry;
+import com.jme3.scene.Node;
 import com.jme3.scene.Spatial;
 import com.jme3.scene.shape.Box;
+import com.jme3.texture.Texture;
 import java.util.ArrayList;
 import java.util.List;
 import static mygame.Setup.blu;
@@ -31,13 +33,15 @@ public class Setup {
     //public static Spatial player;
     public static Spatial plane;
     public static Material modelmat;
+    public static Material playermat;
+    public static Texture player;
     public static Material red;
     public static Material blu;
     public static Material grn;
     public static PointLight pl;
     
     
-    public static void setItUp(AssetManager aM){
+    public static void setItUp(AssetManager aM, Node localRootNode){
                 
         // <editor-fold defaultstate="collapsed" desc="Lighting">
         
@@ -50,13 +54,13 @@ public class Setup {
         dl.setColor(ColorRGBA.Orange);
         dl.setDirection(new Vector3f(-1, -1, -1));
         // Comment this out to remove the overall color (make everything black/white)
-        Main.app.getRoot().addLight(dl);
+        localRootNode.addLight(dl);
         
         pl = new PointLight();
         //Mess around with this to change the color of the moving light
         pl.setColor(ColorRGBA.White);
         pl.setPosition(new Vector3f(-100, 4, 0));
-        Main.app.getRoot().addLight(pl);
+        localRootNode.addLight(pl);
         
         // </editor-fold>
         
@@ -65,7 +69,8 @@ public class Setup {
         Game.player.scale(0.3f);
         Game.player.setLocalTranslation(0, 1.5f, 0);       
         Game.player.rotate(FastMath.QUARTER_PI, FastMath.PI, 0);
-        Game.player.setMaterial(modelmat);        
+        //Game.player.setMaterial(modelmat);        
+        
         // </editor-fold>
         
         // <editor-fold defaultstate="collapsed" desc="Materials">
@@ -81,8 +86,8 @@ public class Setup {
         //modelmat.setTexture("ParallaxMap", aM.loadTexture("Textures/chessboard.png"));
         
         red = new Material(aM, 
-                "Common/MatDefs/Misc/Unshaded.j3md");  
-        
+                "Common/MatDefs/Misc/Unshaded.j3md");         
+
         blu = red.clone();
         grn = red.clone();
         
@@ -117,6 +122,7 @@ public class Setup {
         Game.extent = ((BoundingBox) plane.getWorldBound()).getExtent(new Vector3f());
         
         plane.setMaterial(modelmat);
+        plane.scale(1.5f, 1, 1);
         
         Game.game.cells = new ArrayList<Cell>();
         
@@ -139,12 +145,12 @@ public class Setup {
                 c.model.setMaterial(blu);
             }
             
-            Main.app.getRootNode().attachChild(c.model);            
+            localRootNode.attachChild(c.model);            
             Game.game.cells.add(c);
         }
         // </editor-fold>  
         
-        Spawner.spawnProps(8);
+        Spawner.spawnProps(8, localRootNode);
         
     }
 }

@@ -140,7 +140,7 @@ public class Game {
                 c.last = true;
                 
                 //This is experimental
-                Spawner.spawnProps(c.index);
+                Spawner.spawnProps(c.index, rootNode);
             }
             
             c.position = c.model.getLocalTranslation();

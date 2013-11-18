@@ -1,0 +1,23 @@
+I:\GitHub\OurGame\mobile\bin\MyGame-debug-unaligned.apk : \
+I:\GitHub\OurGame\mobile\bin\MyGame.ap_ \
+I:\GitHub\OurGame\mobile\bin\classes.dex \
+I:\GitHub\OurGame\mobile\libs\jME3-jogg.jar \
+I:\GitHub\OurGame\mobile\libs\jME3-android.jar \
+I:\GitHub\OurGame\mobile\libs\jME3-plugins.jar \
+I:\GitHub\OurGame\mobile\libs\nifty-default-controls.jar \
+I:\GitHub\OurGame\mobile\libs\jME3-niftygui.jar \
+I:\GitHub\OurGame\mobile\libs\jME3-core.jar \
+I:\GitHub\OurGame\mobile\libs\MyGame.jar \
+I:\Android\adt-bundle-windows-x86_64-20130717\adt-bundle-windows-x86_64-20130717\sdk\tools\support\annotations.jar \
+I:\GitHub\OurGame\mobile\libs\j-ogg-vorbisd.jar \
+I:\GitHub\OurGame\mobile\libs\nifty-style-black.jar \
+I:\GitHub\OurGame\mobile\libs\j-ogg-oggd.jar \
+I:\GitHub\OurGame\mobile\libs\eventbus.jar \
+I:\GitHub\OurGame\mobile\libs\jME3-bullet.jar \
+I:\GitHub\OurGame\mobile\libs\jME3-terrain.jar \
+I:\GitHub\OurGame\mobile\libs\jME3-effects.jar \
+I:\GitHub\OurGame\mobile\libs\xmlpull-xpp3.jar \
+I:\GitHub\OurGame\mobile\libs\jME3-networking.jar \
+I:\GitHub\OurGame\mobile\libs\nifty.jar \
+I:\GitHub\OurGame\mobile\libs\armeabi\libbulletjme.so \
+I:\GitHub\OurGame\mobile\libs\armeabi-v7a\libbulletjme.so \
