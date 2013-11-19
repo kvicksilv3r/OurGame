@@ -68,11 +68,11 @@ public class Spawner {
         {
         for(int i = 0; i<2; i++)
          {
-             for(int o = 0; o<10; o++)
+             for(int o = 0; o<5; o++)
              {
          mygame.Props.Prop p = new mygame.Props.Prop();
          p.model = mygame.Props.Props.tree.clone();
-         p.offsetPos = new Vector3f(((Game.extent.x + 2) * 2 *i - 2) ,0, o * ((Game.extent.z*2)/10));
+         p.offsetPos = new Vector3f(((Game.extent.x + 2) * 2 *i - 2) ,0, o * ((Game.extent.z*2)/5));
          p.index = index;
          p.model.rotate(0, FastMath.nextRandomFloat()*2*FastMath.PI, 0);
          Game.game.props.add(p);

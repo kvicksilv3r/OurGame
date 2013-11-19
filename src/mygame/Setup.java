@@ -19,6 +19,7 @@ import com.jme3.scene.Node;
 import com.jme3.scene.Spatial;
 import com.jme3.scene.shape.Box;
 import com.jme3.texture.Texture;
+import com.jme3.util.SkyFactory;
 import java.util.ArrayList;
 import java.util.List;
 import static mygame.Setup.blu;
@@ -39,6 +40,7 @@ public class Setup {
     public static Material blu;
     public static Material grn;
     public static PointLight pl;
+    public static Spatial lastplane;
     
     
     public static void setItUp(AssetManager aM, Node localRootNode){
@@ -118,15 +120,23 @@ public class Setup {
         // </editor-fold>        
         
         // <editor-fold defaultstate="collapsed" desc="Planes/Cells">
+        localRootNode.attachChild(SkyFactory.createSky(
+            aM, "Textures/clrs.jpg", true));
         
         Game.extent = ((BoundingBox) plane.getWorldBound()).getExtent(new Vector3f());
         
         plane.setMaterial(modelmat);
         plane.scale(1.5f, 1, 1);
         
+        lastplane = plane.clone();
+        lastplane.setMaterial(blu);
+        lastplane.setLocalTranslation(0, 0, -Game.extent.z*10);
+        lastplane.rotate(FastMath.QUARTER_PI, 0, 0);
+        localRootNode.attachChild(lastplane);
+                
         Game.game.cells = new ArrayList<Cell>();
         
-        for(int i = 0; i < 9; i++)
+        for(int i = 0; i < 7; i++)
         {
             Cell c = new Cell();
             c.position = new Vector3f(0,0, -(Game.extent.z*2)*i);
@@ -150,7 +160,7 @@ public class Setup {
         }
         // </editor-fold>  
         
-        Spawner.spawnProps(8, localRootNode);
+        Spawner.spawnProps(6, localRootNode);
         
     }
 }
