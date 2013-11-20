@@ -13,6 +13,7 @@ import com.jme3.material.RenderState.BlendMode;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.FastMath;
 import com.jme3.math.Vector3f;
+import com.jme3.post.FilterPostProcessor;
 import com.jme3.renderer.queue.RenderQueue.Bucket;
 import com.jme3.scene.Geometry;
 import com.jme3.scene.Node;
@@ -22,12 +23,7 @@ import com.jme3.texture.Texture;
 import com.jme3.util.SkyFactory;
 import java.util.ArrayList;
 import java.util.List;
-import static mygame.Setup.blu;
-import static mygame.Setup.grn;
-import static mygame.Setup.modelmat;
-import static mygame.Setup.pl;
-import static mygame.Setup.plane;
-import static mygame.Setup.red;
+import com.jme3.post.filters.FogFilter;
 
 public class Setup {
     
@@ -41,7 +37,6 @@ public class Setup {
     public static Material grn;
     public static PointLight pl;
     public static Spatial lastplane;
-    
     
     public static void setItUp(AssetManager aM, Node localRootNode){
                 
@@ -160,7 +155,8 @@ public class Setup {
         }
         // </editor-fold>  
         
-        Spawner.spawnProps(6, localRootNode);
+        Spawner.spawnProps(6, localRootNode);      
+       
         
     }
 }
