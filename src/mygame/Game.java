@@ -21,11 +21,6 @@ import com.jme3.scene.Spatial;
 import com.jme3.scene.shape.Box;
 import java.util.ArrayList;
 import java.util.List;
-import static mygame.Game.height;
-import static mygame.Game.player;
-import static mygame.Game.thatpos;
-import static mygame.Game.thispos;
-import static mygame.Game.timer;
 
 public class Game {
     
@@ -33,12 +28,21 @@ public class Game {
 
     public InputManager inputManager;
     public Node rootNode;
-    public static Spatial player;   
+    public static Player player;
     public static Vector3f extent;
     public static float timer;
     public float sinx;
-    public Vector3f playerPos;
-    public static Vector3f deafaultPos = new Vector3f(0, 1.5f, 0);
+    public static Vector3f defaultPos = new Vector3f(0, 1.5f, 0);
+    public static float playerHeight = 1.5f;
+    
+    public static int currLane = 2;
+    public static int nextLane = 2;
+    
+    public static boolean goingRight = false;
+    public static boolean goingLeft = false;    
+    
+    public Vector3f leftLane;    
+    public Vector3f rightLane;
     
     public ArrayList<Cell> cells;
     public ArrayList<mygame.Props.Prop> props;
@@ -48,9 +52,12 @@ public class Game {
     }
     
     public void gameInit() {
-        player.setMaterial(Setup.modelmat);
-        rootNode.attachChild(player);
-        playerPos = player.getLocalTranslation();
+        player.model.setMaterial(Setup.modelmat);
+        currLane = 2;
+        leftLane = new Vector3f(-extent.x/2, 0, 0);
+        rightLane = new Vector3f(extent.x/2, 0, 0);
+        rootNode.attachChild(player.model);
+        player.position = player.model.getLocalTranslation();
         initKeys();
     }
     
@@ -59,22 +66,17 @@ public class Game {
     inputManager.addMapping("UP",  new KeyTrigger(KeyInput.KEY_UP));
     inputManager.addMapping("LEFT",   new KeyTrigger(KeyInput.KEY_LEFT));
     inputManager.addMapping("RIGHT",  new KeyTrigger(KeyInput.KEY_RIGHT));
-    inputManager.addMapping("DOWN", new KeyTrigger(KeyInput.KEY_DOWN));
+    inputManager.addMapping("DOWN", new KeyTrigger(KeyInput.KEY_DOWN));        
     // Add the names to the action listener.
     inputManager.addListener(analogListener,"LEFT", "RIGHT", "UP", "DOWN");
     }
     
     boolean goingUp = false;
     boolean goingDown = false;
-    boolean goingRight = false;
-    boolean goingLeft = false;
     int move = 0;
     
     public static int thispos;
     public static int thatpos;
-    public static int height = 4;
-    
-    
     
     private AnalogListener analogListener = new AnalogListener() {
     public void onAnalog(String name, float value, float tpf) {
@@ -88,14 +90,23 @@ public class Game {
 
         }
         
-        if (name.equals("LEFT")) {         
-          player.setLocalTranslation(playerPos.x - value * 3, playerPos.y, playerPos.z);
-
+        if (name.equals("LEFT")) {
+                 
+        goingLeft = true; 
+        goingRight = false;
+                
+        
+        nextLane -= 1;
+        
         }
         
-        if (name.equals("RIGHT")) {          
-         player.setLocalTranslation(playerPos.x + value * 3, playerPos.y, playerPos.z);
-
+        if (name.equals("RIGHT")) {    
+       
+       goingRight = true;
+       goingLeft = false;      
+                  
+          nextLane += 1;     
+        
         }
         
         if (name.equals("DOWN")) {          
@@ -109,9 +120,9 @@ public class Game {
     };
 
     public void gameUpdate(float tpf) {
-       
-        playerPos = player.getLocalTranslation(); 
+               
         timer += tpf;
+        player.model.setLocalTranslation(player.position);
         
         sinx += 0.1;
         
@@ -126,7 +137,7 @@ public class Game {
             // Sets the speed of the cells. Its based on cell-length and framerate/time per frame
             c.position.z += extent.z * tpf;
             
-            if(c.model.getLocalTranslation().z > extent.z*2)
+            if(c.model.getLocalTranslation().z > extent.z*tpf*40)
             {
                 for(mygame.Props.Prop p : props)
                 {
@@ -157,28 +168,112 @@ public class Game {
         } 
         
         // </editor-fold>
+
         
-               
+        // <editor-fold defaultstate="collapsed" desc="Player Movement">
+                
+        if(nextLane > 3)
+        {
+            nextLane = 3;
+        }
+        else if(nextLane < 1)
+        {
+            nextLane = 1;
+        }
+        
+        //-----------------------------------------
+                
         if(goingUp) 
         {
-            player.move(0, FastMath.sin(sinx*1.75f)/7,0);
+            player.model.move(0, FastMath.sin(sinx*1.75f)/7,0);
             
-            if(playerPos.y <= deafaultPos.y)
+            if(player.position.y <= defaultPos.y)
             {
                 goingUp = false;
             }
         }        
         if(goingDown)
         {
-            player.move(0, -FastMath.sin(sinx*1.9f)/5,0);
+            player.model.move(0, -FastMath.sin(sinx*1.9f)/5,0);
             
-            if(playerPos.y >= deafaultPos.y)
+            if(player.position.y >= defaultPos.y)
             {
                 goingDown = false;
             }
-        }
+        }  
+        //-----------------------------------------
+            
+            if(goingLeft)
+            {
+                //if(currLane > nextLane)
+                //{
+                    if(nextLane == 1)
+                    {
+                        if(player.position.x > leftLane.x)
+                        {
+                        player.position.x -= (0.28*extent.x)*4*tpf;
+                        }
+                        else if(player.position.x < leftLane.x)
+                        {
+                            goingLeft = false;
+                            currLane = 1;
+                            player.position.x = leftLane.x;
+                        }
+                    }
+                //}
+                    
+                    if(nextLane == 2)
+                    {
+                        if(player.position.x > defaultPos.x)
+                        {
+                        player.position.x -= (0.28*extent.x)*4*tpf;
+                        }
+                        else if(player.position.x < defaultPos.x)
+                        {
+                            goingLeft = false;
+                            currLane = 2;
+                            player.position.x = defaultPos.x;
+                        }
+                    }
+            }
+            
+            if(goingRight)
+            {
+                //if(currLane > nextLane)
+                //{
+                    if(nextLane == 3)
+                    {
+                        if(player.position.x < rightLane.x)
+                        {
+                        player.position.x += (0.28*extent.x)*4*tpf;
+                        }
+                        else if(player.position.x > leftLane.x)
+                        {
+                            goingRight = false;
+                            currLane = 3;
+                            player.position.x = rightLane.x;
+                        }
+                    }
+                    
+                    if(nextLane == 2)
+                    {
+                        if(player.position.x < defaultPos.x)
+                        {
+                        player.position.x += (0.28*extent.x)*4*tpf;
+                        }
+                        else if(player.position.x > defaultPos.x)
+                        {
+                            goingRight = false;
+                            currLane = 2;
+                            player.position.x = defaultPos.x;
+                        }
+                    }
+                //}
+            }
+            
         
-
         
+        
+        // </editor-fold>
     }
 }

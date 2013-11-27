@@ -57,15 +57,16 @@ public class Setup {
         //Mess around with this to change the color of the moving light
         pl.setColor(ColorRGBA.White);
         pl.setPosition(new Vector3f(-100, 4, 0));
-        localRootNode.addLight(pl);
+        //localRootNode.addLight(pl);
         
         // </editor-fold>
         
         // <editor-fold defaultstate="collapsed" desc="Player">
-        Game.player = aM.loadModel("Models/Reeaper.j3o");          
-        Game.player.scale(0.3f);
-        Game.player.setLocalTranslation(0, 1.5f, 0);       
-        Game.player.rotate(FastMath.QUARTER_PI, FastMath.PI, 0);
+        Game.player = new Player();
+        Game.player.model = aM.loadModel("Models/Reeaper.j3o");          
+        Game.player.model.scale(0.3f);
+        Game.player.model.setLocalTranslation(0, 1.5f, 0);       
+        Game.player.model.rotate(FastMath.QUARTER_PI, FastMath.PI, 0);
         //Game.player.setMaterial(modelmat);        
         
         // </editor-fold>
