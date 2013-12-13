@@ -52,7 +52,7 @@ public class Game {
     }
     
     public void gameInit() {
-        player.model.setMaterial(Setup.modelmat);
+        player.model.setMaterial(Setup.playermat);
         currLane = 2;
         leftLane = new Vector3f(-extent.x/2, 0, 0);
         rightLane = new Vector3f(extent.x/2, 0, 0);
@@ -211,7 +211,7 @@ public class Game {
                     {
                         if(player.position.x > leftLane.x)
                         {
-                        player.position.x -= (0.28*extent.x)*4*tpf;
+                        player.position.x -= (0.52*extent.x)*4*tpf;
                         }
                         else if(player.position.x < leftLane.x)
                         {
@@ -226,7 +226,7 @@ public class Game {
                     {
                         if(player.position.x > defaultPos.x)
                         {
-                        player.position.x -= (0.28*extent.x)*4*tpf;
+                        player.position.x -= (0.52*extent.x)*4*tpf;
                         }
                         else if(player.position.x < defaultPos.x)
                         {
@@ -245,7 +245,7 @@ public class Game {
                     {
                         if(player.position.x < rightLane.x)
                         {
-                        player.position.x += (0.28*extent.x)*4*tpf;
+                        player.position.x += (0.52*extent.x)*4*tpf;
                         }
                         else if(player.position.x > leftLane.x)
                         {
@@ -254,12 +254,12 @@ public class Game {
                             player.position.x = rightLane.x;
                         }
                     }
-                    
+                     
                     if(nextLane == 2)
                     {
                         if(player.position.x < defaultPos.x)
                         {
-                        player.position.x += (0.28*extent.x)*4*tpf;
+                        player.position.x += (0.52*extent.x)*4*tpf;
                         }
                         else if(player.position.x > defaultPos.x)
                         {

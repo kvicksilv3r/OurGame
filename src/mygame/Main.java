@@ -6,6 +6,7 @@ import com.jme3.app.SimpleApplication;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.Vector3f;
 import com.jme3.post.FilterPostProcessor;
+import com.jme3.post.filters.BloomFilter;
 import com.jme3.post.filters.FogFilter;
 import com.jme3.renderer.RenderManager;
 import com.jme3.scene.Node;
@@ -49,6 +50,11 @@ public class Main extends SimpleApplication {
         fog.setFogDistance(155);
         fog.setFogDensity(2.0f);
         fpp.addFilter(fog);
+        //---- Troll
+        BloomFilter bloom=new BloomFilter();
+        //fpp.addFilter(bloom);
+        
+        //--- Troll
         viewPort.addProcessor(fpp);
     }
 

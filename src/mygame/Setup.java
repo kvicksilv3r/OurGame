@@ -36,7 +36,8 @@ public class Setup {
     public static Material blu;
     public static Material grn;
     public static PointLight pl;
-    public static Spatial lastplane;
+    public static Spatial lastplane; 
+    public static Texture playerTex;
     
     public static void setItUp(AssetManager aM, Node localRootNode){
                 
@@ -63,7 +64,7 @@ public class Setup {
         
         // <editor-fold defaultstate="collapsed" desc="Player">
         Game.player = new Player();
-        Game.player.model = aM.loadModel("Models/Reeaper.j3o");          
+        Game.player.model = aM.loadModel("Models/SUP.obj");          
         Game.player.model.scale(0.3f);
         Game.player.model.setLocalTranslation(0, 1.5f, 0);       
         Game.player.model.rotate(FastMath.QUARTER_PI, FastMath.PI, 0);
@@ -84,7 +85,14 @@ public class Setup {
         //modelmat.setTexture("ParallaxMap", aM.loadTexture("Textures/chessboard.png"));
         
         red = new Material(aM, 
-                "Common/MatDefs/Misc/Unshaded.j3md");         
+                "Common/MatDefs/Misc/Unshaded.j3md");
+        
+        playerTex = aM.loadTexture("Textures/texture_grim_fin.png");
+        
+        playermat = new Material(aM, 
+                "Common/MatDefs/Misc/Unshaded.j3md"); 
+        
+        playermat.setTexture("ColorMap", playerTex);
 
         blu = red.clone();
         grn = red.clone();

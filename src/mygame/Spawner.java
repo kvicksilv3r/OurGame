@@ -55,7 +55,7 @@ public class Spawner {
         mygame.Props.Prop p = new mygame.Props.Prop();
         p.model = mygame.Props.Props.tree.clone();
         p.offsetPos = new Vector3f(FastMath.nextRandomFloat() * 2*Game.extent.x, 0, FastMath.nextRandomFloat()* 2 * Game.extent.z);
-        p.index = index;    
+        p.index = index;
         Game.game.props.add(p);
        localRootNode.attachChild(p.model);  
         }
