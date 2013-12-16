@@ -36,7 +36,7 @@ public class Main extends SimpleApplication {
         
         Setup.setItUp(assetManager, rootNode);        
         this.flyCam.setEnabled(false);
-        this.cam.setFrustumFar(85);
+        this.cam.setFrustumFar(75);
         this.cam.setLocation(new Vector3f(0,3,7));
         //this.cam.setLocation(new Vector3f(30,30,35));
         this.cam.lookAt(new Vector3f(0, 2, 2), new Vector3f(0,1,0));
@@ -46,7 +46,7 @@ public class Main extends SimpleApplication {
         
         fpp=new FilterPostProcessor(assetManager);
         fog=new FogFilter();
-        fog.setFogColor(new ColorRGBA(0.9f, 0.9f, 0.9f, 1.0f));
+        fog.setFogColor(new ColorRGBA(0.0f, 0.0f, 0.0f, 1.0f));
         fog.setFogDistance(155);
         fog.setFogDensity(2.0f);
         fpp.addFilter(fog);

@@ -31,6 +31,9 @@ public class Setup {
     public static Spatial plane;
     public static Material modelmat;
     public static Material playermat;
+    public static Material treemat;
+    public static Material tombmat;
+    public static Material ghostmat;
     public static Texture player;
     public static Material red;
     public static Material blu;
@@ -74,21 +77,16 @@ public class Setup {
         
         // <editor-fold defaultstate="collapsed" desc="Materials">
         
-        modelmat = new Material(aM, 
-                "Common/MatDefs/Light/Lighting.j3md");
+        //modelmat = new Material(aM, 
+         //       "Common/MatDefs/Light/Lighting.j3md");
         //modelmat.setBoolean("VTangent",true); 
         //modelmat.setBoolean("Minnaert",true);
-        
-        //modelmat.setTexture("DiffuseMap", aM.loadTexture("Textures/chessboard.png")); 
-        //modelmat.setTexture("SpecularMap", aM.loadTexture("Textures/chessboard.png")); 
-        //modelmat.setTexture("NormalMap", aM.loadTexture("Textures/chessboard.png")); 
-        //modelmat.setTexture("ParallaxMap", aM.loadTexture("Textures/chessboard.png"));
         
         red = new Material(aM, 
                 "Common/MatDefs/Misc/Unshaded.j3md");
         
         playerTex = aM.loadTexture("Textures/texture_grim_fin.png");
-        
+               
         playermat = new Material(aM, 
                 "Common/MatDefs/Misc/Unshaded.j3md"); 
         
@@ -100,6 +98,10 @@ public class Setup {
         red.setColor("Color", ColorRGBA.Red);
         blu.setColor("Color", ColorRGBA.Blue);
         grn.setColor("Color", ColorRGBA.Green);
+        
+        treemat = red.clone();
+        tombmat = grn.clone();
+        ghostmat = blu.clone();
         //-----------------
         
         // </editor-fold>  
@@ -110,6 +112,10 @@ public class Setup {
         mygame.Props.Props.tombstone1 = aM.loadModel("Models/Tombstone1.j3o");
         mygame.Props.Props.ghost = aM.loadModel("Models/ghost.j3o");
         mygame.Props.Props.tree = aM.loadModel("Models/tree.j3o");
+        
+        mygame.Props.Props.tree.setMaterial(treemat);
+        mygame.Props.Props.ghost.setMaterial(ghostmat);
+        mygame.Props.Props.tombstone1.setMaterial(tombmat);
         
         // </editor-fold>  
         

@@ -209,31 +209,33 @@ public class Game {
                 //{
                     if(nextLane == 1)
                     {
-                        if(player.position.x > leftLane.x)
-                        {
-                        player.position.x -= (0.52*extent.x)*4*tpf;
-                        }
-                        else if(player.position.x < leftLane.x)
+                        if((player.position.x - (0.52*extent.x)*4*tpf) < leftLane.x )
                         {
                             goingLeft = false;
                             currLane = 1;
                             player.position.x = leftLane.x;
                         }
+                        else if(player.position.x > leftLane.x)
+                        {
+                        player.position.x -= (0.52*extent.x)*4*tpf;
+                        }                        
+
                     }
                 //}
                     
                     if(nextLane == 2)
                     {
-                        if(player.position.x > defaultPos.x)
-                        {
-                        player.position.x -= (0.52*extent.x)*4*tpf;
-                        }
-                        else if(player.position.x < defaultPos.x)
+                        if((player.position.x - (0.52*extent.x)*4*tpf) < defaultPos.x )
                         {
                             goingLeft = false;
                             currLane = 2;
                             player.position.x = defaultPos.x;
                         }
+                        else if(player.position.x > defaultPos.x)
+                        {
+                        player.position.x -= (0.52*extent.x)*4*tpf;
+                        }
+
                     }
             }
             
@@ -243,29 +245,29 @@ public class Game {
                 //{
                     if(nextLane == 3)
                     {
-                        if(player.position.x < rightLane.x)
-                        {
-                        player.position.x += (0.52*extent.x)*4*tpf;
-                        }
-                        else if(player.position.x > leftLane.x)
+                        if((player.position.x + (0.52*extent.x)*4*tpf) > rightLane.x)
                         {
                             goingRight = false;
                             currLane = 3;
                             player.position.x = rightLane.x;
                         }
+                        else if(player.position.x < rightLane.x)
+                        {
+                        player.position.x += (0.52*extent.x)*4*tpf;
+                        }
                     }
                      
                     if(nextLane == 2)
                     {
-                        if(player.position.x < defaultPos.x)
-                        {
-                        player.position.x += (0.52*extent.x)*4*tpf;
-                        }
-                        else if(player.position.x > defaultPos.x)
+                        if((player.position.x + (0.52*extent.x)*4*tpf) > defaultPos.x)
                         {
                             goingRight = false;
-                            currLane = 2;
+                            currLane = 3;
                             player.position.x = defaultPos.x;
+                        }
+                        else if(player.position.x < defaultPos.x)
+                        {
+                        player.position.x += (0.52*extent.x)*4*tpf;
                         }
                     }
                 //}
