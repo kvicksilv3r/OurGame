@@ -1,21 +1,26 @@
-R:\GitHub\OurGame\mobile\bin\MyGame.ap_ \
- : R:\GitHub\OurGame\mobile\res\drawable-hdpi\ic_launcher.png \
-R:\GitHub\OurGame\mobile\res\drawable-ldpi\ic_launcher.png \
-R:\GitHub\OurGame\mobile\res\drawable-mdpi\ic_launcher.png \
-R:\GitHub\OurGame\mobile\res\layout\main.xml \
-R:\GitHub\OurGame\mobile\res\values\strings.xml \
-R:\GitHub\OurGame\mobile\bin\res\drawable-hdpi\ic_launcher.png \
-R:\GitHub\OurGame\mobile\bin\res\drawable-ldpi\ic_launcher.png \
-R:\GitHub\OurGame\mobile\bin\res\drawable-mdpi\ic_launcher.png \
-R:\GitHub\OurGame\mobile\assets\META-INF \
-R:\GitHub\OurGame\mobile\assets\Models \
-R:\GitHub\OurGame\mobile\assets\Textures \
-R:\GitHub\OurGame\mobile\assets\META-INF\MANIFEST.MF \
-R:\GitHub\OurGame\mobile\assets\Models\ghost.j3o \
-R:\GitHub\OurGame\mobile\assets\Models\plane.j3o \
-R:\GitHub\OurGame\mobile\assets\Models\Reaper.j3o \
-R:\GitHub\OurGame\mobile\assets\Models\Reeaper.j3o \
-R:\GitHub\OurGame\mobile\assets\Models\Tombstone1.j3o \
-R:\GitHub\OurGame\mobile\assets\Models\tree.j3o \
-R:\GitHub\OurGame\mobile\assets\Textures\clrs.jpg \
-R:\GitHub\OurGame\mobile\bin\AndroidManifest.xml \
+R:\GitHub\Ny mapp\OurGame\mobile\bin\MyGame.ap_ \
+ : R:\GitHub\Ny mapp\OurGame\mobile\res\drawable-hdpi\ic_launcher.png \
+R:\GitHub\Ny mapp\OurGame\mobile\res\drawable-ldpi\ic_launcher.png \
+R:\GitHub\Ny mapp\OurGame\mobile\res\drawable-mdpi\ic_launcher.png \
+R:\GitHub\Ny mapp\OurGame\mobile\res\layout\main.xml \
+R:\GitHub\Ny mapp\OurGame\mobile\res\values\strings.xml \
+R:\GitHub\Ny mapp\OurGame\mobile\bin\res\drawable-hdpi\ic_launcher.png \
+R:\GitHub\Ny mapp\OurGame\mobile\bin\res\drawable-ldpi\ic_launcher.png \
+R:\GitHub\Ny mapp\OurGame\mobile\bin\res\drawable-mdpi\ic_launcher.png \
+R:\GitHub\Ny mapp\OurGame\mobile\assets\META-INF \
+R:\GitHub\Ny mapp\OurGame\mobile\assets\Models \
+R:\GitHub\Ny mapp\OurGame\mobile\assets\Textures \
+R:\GitHub\Ny mapp\OurGame\mobile\assets\META-INF\MANIFEST.MF \
+R:\GitHub\Ny mapp\OurGame\mobile\assets\Models\eye.j3o \
+R:\GitHub\Ny mapp\OurGame\mobile\assets\Models\ghost.j3o \
+R:\GitHub\Ny mapp\OurGame\mobile\assets\Models\plane.j3o \
+R:\GitHub\Ny mapp\OurGame\mobile\assets\Models\stone.j3o \
+R:\GitHub\Ny mapp\OurGame\mobile\assets\Models\SUP.j3o \
+R:\GitHub\Ny mapp\OurGame\mobile\assets\Models\Tombstone1.j3o \
+R:\GitHub\Ny mapp\OurGame\mobile\assets\Models\tree.j3o \
+R:\GitHub\Ny mapp\OurGame\mobile\assets\Models\treerope.j3o \
+R:\GitHub\Ny mapp\OurGame\mobile\assets\Textures\clrs.jpg \
+R:\GitHub\Ny mapp\OurGame\mobile\assets\Textures\eyeTex.png \
+R:\GitHub\Ny mapp\OurGame\mobile\assets\Textures\playerTex.png \
+R:\GitHub\Ny mapp\OurGame\mobile\assets\Textures\treeTex.png \
+R:\GitHub\Ny mapp\OurGame\mobile\bin\AndroidManifest.xml \

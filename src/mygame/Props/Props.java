@@ -12,5 +12,7 @@ public class Props {
     public static Spatial tombstone1;
     public static Spatial tree;
     public static Spatial ghost;
+    public static Spatial ropetree;
+    public static Spatial eye;
            
 }

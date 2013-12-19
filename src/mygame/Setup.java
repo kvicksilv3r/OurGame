@@ -29,18 +29,20 @@ public class Setup {
     
     //public static Spatial player;
     public static Spatial plane;
+    
+    public static Texture player;
+    public static PointLight pl;
+    public static Spatial lastplane; 
+    public static Texture playerTex;
     public static Material modelmat;
     public static Material playermat;
     public static Material treemat;
     public static Material tombmat;
     public static Material ghostmat;
-    public static Texture player;
+    public static Material eyemat;
     public static Material red;
     public static Material blu;
     public static Material grn;
-    public static PointLight pl;
-    public static Spatial lastplane; 
-    public static Texture playerTex;
     
     public static void setItUp(AssetManager aM, Node localRootNode){
                 
@@ -67,7 +69,7 @@ public class Setup {
         
         // <editor-fold defaultstate="collapsed" desc="Player">
         Game.player = new Player();
-        Game.player.model = aM.loadModel("Models/SUP.obj");          
+        Game.player.model = aM.loadModel("Models/SUP.j3o");          
         Game.player.model.scale(0.3f);
         Game.player.model.setLocalTranslation(0, 1.5f, 0);       
         Game.player.model.rotate(FastMath.QUARTER_PI, FastMath.PI, 0);
@@ -85,7 +87,13 @@ public class Setup {
         red = new Material(aM, 
                 "Common/MatDefs/Misc/Unshaded.j3md");
         
-        playerTex = aM.loadTexture("Textures/texture_grim_fin.png");
+        playerTex = aM.loadTexture("Textures/playerTex.png");
+        
+        treemat = red.clone();
+        treemat.setTexture("ColorMap", aM.loadTexture("Textures/treeTex.png"));
+        
+        eyemat = red.clone();
+        eyemat.setTexture("ColorMap", aM.loadTexture("Textures/eyeTex.png"));
                
         playermat = new Material(aM, 
                 "Common/MatDefs/Misc/Unshaded.j3md"); 
@@ -98,8 +106,7 @@ public class Setup {
         red.setColor("Color", ColorRGBA.Red);
         blu.setColor("Color", ColorRGBA.Blue);
         grn.setColor("Color", ColorRGBA.Green);
-        
-        treemat = red.clone();
+                
         tombmat = grn.clone();
         ghostmat = blu.clone();
         //-----------------
@@ -109,13 +116,17 @@ public class Setup {
         // <editor-fold defaultstate="collapsed" desc="Model Loader">
         
         plane = aM.loadModel("Models/plane.j3o");
-        mygame.Props.Props.tombstone1 = aM.loadModel("Models/Tombstone1.j3o");
+        mygame.Props.Props.tombstone1 = aM.loadModel("Models/stone.j3o");
         mygame.Props.Props.ghost = aM.loadModel("Models/ghost.j3o");
         mygame.Props.Props.tree = aM.loadModel("Models/tree.j3o");
+        mygame.Props.Props.eye = aM.loadModel("Models/eye.j3o");
+        mygame.Props.Props.ropetree = aM.loadModel("Models/treerope.j3o");
         
         mygame.Props.Props.tree.setMaterial(treemat);
         mygame.Props.Props.ghost.setMaterial(ghostmat);
         mygame.Props.Props.tombstone1.setMaterial(tombmat);
+        mygame.Props.Props.ropetree.setMaterial(treemat);
+        mygame.Props.Props.eye.setMaterial(eyemat);
         
         // </editor-fold>  
         
@@ -125,6 +136,7 @@ public class Setup {
         mygame.Props.Props.tombstone1.scale(0.5f);
         mygame.Props.Props.ghost.scale(0.5f);
         mygame.Props.Props.tree.scale(0.5f);
+        mygame.Props.Props.ropetree.scale(0.5f);
         
         
         // </editor-fold>        

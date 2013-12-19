@@ -137,7 +137,7 @@ public class Game {
             // Sets the speed of the cells. Its based on cell-length and framerate/time per frame
             c.position.z += extent.z * tpf;
             
-            if(c.model.getLocalTranslation().z > extent.z*tpf*40)
+            if(c.model.getLocalTranslation().z > extent.z*tpf*80)
             {
                 for(mygame.Props.Prop p : props)
                 {
@@ -168,7 +168,6 @@ public class Game {
         } 
         
         // </editor-fold>
-
         
         // <editor-fold defaultstate="collapsed" desc="Player Movement">
                 

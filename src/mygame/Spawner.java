@@ -25,10 +25,10 @@ public class Spawner {
         //Creates a new box, assigns a material, gives ít an offsetposition, number that tells there if will be in 
         // relativity to the cells, it gives the box the same index as the cell it belongs to
                 
-        for(int i = 0; i < FastMath.nextRandomInt(1, 3); i++)
+        for(int i = 0; i < FastMath.nextRandomInt(1, 4); i++)
         {
             
-            wts = FastMath.nextRandomInt(1, 3);
+            wts = FastMath.nextRandomInt(1, 5);
         
         if(wts == 1)
         {
@@ -57,7 +57,27 @@ public class Spawner {
         p.offsetPos = new Vector3f(FastMath.nextRandomFloat() * 2*Game.extent.x, 0, FastMath.nextRandomFloat()* 2 * Game.extent.z);
         p.index = index;
         Game.game.props.add(p);
-       localRootNode.attachChild(p.model);  
+        localRootNode.attachChild(p.model);  
+        }
+        
+        else if (wts == 4)
+        {
+        mygame.Props.Prop p = new mygame.Props.Prop();
+        p.model = mygame.Props.Props.ropetree.clone();
+        p.offsetPos = new Vector3f(FastMath.nextRandomFloat() * 2*Game.extent.x, 0, FastMath.nextRandomFloat()* 2 * Game.extent.z);
+        p.index = index;
+        Game.game.props.add(p);
+        localRootNode.attachChild(p.model);  
+        }
+        
+        else if (wts == 5)
+        {
+        mygame.Props.Prop p = new mygame.Props.Prop();
+        p.model = mygame.Props.Props.eye.clone();
+        p.offsetPos = new Vector3f(FastMath.nextRandomFloat() * 2*Game.extent.x, 0, FastMath.nextRandomFloat()* 2 * Game.extent.z);
+        p.index = index;    
+        Game.game.props.add(p);
+        localRootNode.attachChild(p.model);  
         }
         }
         
@@ -72,6 +92,7 @@ public class Spawner {
              {
          mygame.Props.Prop p = new mygame.Props.Prop();
          p.model = mygame.Props.Props.tree.clone();
+         p.model.scale(2);
          p.offsetPos = new Vector3f(((Game.extent.x + 2) * 2 *i - 2) ,0, o * ((Game.extent.z*2)/5));
          p.index = index;
          p.model.rotate(0, FastMath.nextRandomFloat()*2*FastMath.PI, 0);

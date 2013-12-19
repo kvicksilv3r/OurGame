@@ -1,2 +1,2 @@
-R:\GitHub\OurGame\mobile\bin\AndroidManifest.xml : \
-R:\GitHub\OurGame\mobile\AndroidManifest.xml \
+R:\GitHub\Ny mapp\OurGame\mobile\bin\AndroidManifest.xml : \
+R:\GitHub\Ny mapp\OurGame\mobile\AndroidManifest.xml \
