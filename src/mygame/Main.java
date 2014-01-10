@@ -38,11 +38,12 @@ public class Main extends SimpleApplication {
         this.flyCam.setEnabled(false);
         this.cam.setFrustumFar(75);
         this.cam.setLocation(new Vector3f(0,3,7));
-        //this.cam.setLocation(new Vector3f(30,30,35));
         this.cam.lookAt(new Vector3f(0, 2, 2), new Vector3f(0,1,0));
         g.inputManager = inputManager;
         g.rootNode = rootNode;
         g.gameInit();
+        
+        Controls.Setup();
         
         fpp=new FilterPostProcessor(assetManager);
         fog=new FogFilter();
@@ -50,11 +51,7 @@ public class Main extends SimpleApplication {
         fog.setFogDistance(155);
         fog.setFogDensity(2.0f);
         fpp.addFilter(fog);
-        //---- Troll
-        BloomFilter bloom=new BloomFilter();
-        //fpp.addFilter(bloom);
         
-        //--- Troll
         viewPort.addProcessor(fpp);
     }
 

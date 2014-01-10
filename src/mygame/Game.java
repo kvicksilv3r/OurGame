@@ -5,13 +5,19 @@
 package mygame;
 
 import com.jme3.bounding.BoundingBox;
+import com.jme3.collision.CollisionResult;
+import com.jme3.collision.CollisionResults;
 import com.jme3.input.InputManager;
 import com.jme3.input.KeyInput;
 import com.jme3.input.controls.AnalogListener;
 import com.jme3.input.controls.KeyTrigger;
+import com.jme3.input.controls.TouchListener;
+import com.jme3.input.event.TouchEvent;
 import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.FastMath;
+import com.jme3.math.Ray;
+import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
 import com.jme3.renderer.RenderManager;
 import com.jme3.renderer.queue.RenderQueue.Bucket;
@@ -70,6 +76,12 @@ public class Game {
     // Add the names to the action listener.
     inputManager.addListener(analogListener,"LEFT", "RIGHT", "UP", "DOWN");
     }
+    
+    public TouchListener touchListener = new TouchListener() {
+        public void onTouch(String name, TouchEvent evt, float tpf) {
+            if(evt.getType() != TouchEvent.Type.DOWN) return;            
+        }
+    };
     
     boolean goingUp = false;
     boolean goingDown = false;
