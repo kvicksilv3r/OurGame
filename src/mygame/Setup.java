@@ -64,8 +64,8 @@ public class Setup {
         
         // <editor-fold defaultstate="collapsed" desc="Player">
         Game.player = new Player();
-        Game.player.model = aM.loadModel("Models/Player/SUP.j3o");
-        //Game.player.model = aM.loadModel("Models/Player/Untitled.001.mesh.xml");
+        //Game.player.model = aM.loadModel("Models/Player/SUP.j3o");
+        Game.player.model = aM.loadModel("Models/Player/Untitled.001.mesh.xml");
         Game.player.model.scale(0.3f);
         Game.player.model.setLocalTranslation(0, 1.5f, 0);       
         Game.player.model.rotate(FastMath.PI*(0.8f), FastMath.PI, 0);

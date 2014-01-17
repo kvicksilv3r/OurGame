@@ -42,7 +42,7 @@ public class Main extends SimpleApplication {
         g.rootNode = rootNode;
         g.gameInit();
         
-        Controls.Setup();
+        //Controls.Setup();
         
         fpp=new FilterPostProcessor(assetManager);
         fog=new FogFilter();

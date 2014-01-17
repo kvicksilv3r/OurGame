@@ -77,13 +77,7 @@ public class Game  {
     // Add the names to the action listener.
     inputManager.addListener(analogListener,"LEFT", "RIGHT", "UP", "DOWN");
     }
-    
-    public TouchListener touchListener = new TouchListener() {
-        public void onTouch(String name, TouchEvent evt, float tpf) {
-            if(evt.getType() != TouchEvent.Type.DOWN) return;            
-        }
-    };
-    
+
     boolean goingUp = false;
     boolean goingDown = false;
     int move = 0;
@@ -161,7 +155,8 @@ public class Game  {
                     }
                 }
                 
-                c.model.setLocalTranslation(0,0,-(cells.size()-1)*extent.z*2);
+                //c.model.setLocalTranslation(0,0,-(cells.size()-1)*extent.z*2);
+		c.position.z -= ((cells.size()-1)*extent.z*2);
                 c.last = true;
                 
                 //This is experimental
