@@ -64,8 +64,8 @@ public class Setup {
         
         // <editor-fold defaultstate="collapsed" desc="Player">
         Game.player = new Player();
-        //Game.player.model = aM.loadModel("Models/SUP.j3o");
-        Game.player.model = aM.loadModel("Models/Player/Untitled.001.mesh.xml");
+        Game.player.model = aM.loadModel("Models/Player/SUP.j3o");
+        //Game.player.model = aM.loadModel("Models/Player/Untitled.001.mesh.xml");
         Game.player.model.scale(0.3f);
         Game.player.model.setLocalTranslation(0, 1.5f, 0);       
         Game.player.model.rotate(FastMath.PI*(0.8f), FastMath.PI, 0);
@@ -178,17 +178,11 @@ public class Setup {
         }
         // </editor-fold>   
         
-        // <editor-fold defaultstate="collapsed" desc="PlayerBoundingBox">
-        /*Vector3f c = new Vector3f();
-        
-        float x = 1;
-        float z = 1;
-        float y = 1
-        
-        public BoundingBox(c,
-                float x,
-                float y,
-                float z;*/
+        //<editor-fold defaultstate="collapsed" desc="PlayerBoundingBox">
+        Vector3f VplayerBbox = new Vector3f(1,
+                1,
+                1);
+        mygame.Props.BoundingBox playerBbox = new mygame.Props.BoundingBox(VplayerBbox, 1, 1, 1);
         // </editor-fold>
         
     }
