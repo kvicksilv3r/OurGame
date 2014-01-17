@@ -4,26 +4,13 @@
  */
 package mygame;
 
-<<<<<<< HEAD
-=======
-import com.jme3.bounding.BoundingBox;
-import com.jme3.collision.CollisionResult;
-import com.jme3.collision.CollisionResults;
->>>>>>> 5503efa1f0df33094e601f6e57b428916c0753cf
 import com.jme3.input.InputManager;
 import com.jme3.input.KeyInput;
 import com.jme3.input.controls.AnalogListener;
 import com.jme3.input.controls.KeyTrigger;
-<<<<<<< HEAD
-=======
 import com.jme3.input.controls.TouchListener;
 import com.jme3.input.event.TouchEvent;
-import com.jme3.material.Material;
-import com.jme3.math.ColorRGBA;
->>>>>>> 5503efa1f0df33094e601f6e57b428916c0753cf
 import com.jme3.math.FastMath;
-import com.jme3.math.Ray;
-import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Node;
 import java.util.ArrayList;

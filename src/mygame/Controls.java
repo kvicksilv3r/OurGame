@@ -1,7 +1,5 @@
 package mygame;
 
-import com.jme3.input.MouseInput;
-import com.jme3.input.controls.MouseButtonTrigger;
 import com.jme3.input.controls.TouchTrigger;
 
 public class Controls {
