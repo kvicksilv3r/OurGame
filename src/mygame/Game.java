@@ -4,6 +4,9 @@
  */
 package mygame;
 
+import com.jme3.animation.AnimChannel;
+import com.jme3.animation.AnimControl;
+import com.jme3.animation.AnimEventListener;
 import com.jme3.input.InputManager;
 import com.jme3.input.KeyInput;
 import com.jme3.input.controls.AnalogListener;
@@ -15,7 +18,7 @@ import com.jme3.math.Vector3f;
 import com.jme3.scene.Node;
 import java.util.ArrayList;
 
-public class Game {
+public class Game  {
     public static Game game;
 
     public InputManager inputManager;
@@ -39,6 +42,12 @@ public class Game {
     public ArrayList<Cell> cells;
     public ArrayList<mygame.Props.Prop> props;
     
+    // animation
+    private AnimChannel playerChannel;
+    private AnimControl playerControl;
+    //control = player.getControl(AnimControl.class);  
+    private AnimEventListener AnimListener;
+    
     public Game() {
         Game.game = this;
     }
@@ -51,6 +60,12 @@ public class Game {
         rootNode.attachChild(player.model);
         player.position = player.model.getLocalTranslation();
         initKeys();
+        
+        //Animation
+        playerControl = player.model.getControl(AnimControl.class);
+        playerControl.addListener(AnimListener);
+        playerChannel = playerControl.createChannel();
+        playerChannel.setAnim("my_animation");
     }
     
     private void initKeys() {

@@ -12,10 +12,10 @@ import com.jme3.scene.Node;
 import com.jme3.system.AppSettings;
 
 public class Main extends SimpleApplication {
-
+   
     public static Main app;    
     private FilterPostProcessor fpp;
-    private FogFilter fog;
+    private FogFilter fog;  
     
     public static void main(String[] args) {
         app = new Main();

@@ -1,25 +1,25 @@
-R:\GitHub\Ny mapp\OurGame\mobile\bin\classes.dex : \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\classes\com\mycompany\mygame\BuildConfig.class \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\classes\com\mycompany\mygame\MainActivity.class \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\classes\com\mycompany\mygame\R$attr.class \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\classes\com\mycompany\mygame\R$drawable.class \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\classes\com\mycompany\mygame\R$layout.class \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\classes\com\mycompany\mygame\R$string.class \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\classes\com\mycompany\mygame\R.class \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\dexedLibs\jME3-jogg-d2602822430f04e7e9a39a85ab9aed9f.jar \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\dexedLibs\jME3-android-a0869994126074c2a2b43c7aa29e690b.jar \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\dexedLibs\jME3-plugins-6f78258cec5656a31771c85bb98e3565.jar \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\dexedLibs\nifty-default-controls-39cc9ba29eb7db81507ed97b3de1a0b3.jar \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\dexedLibs\jME3-niftygui-255daa1807cc11c78d19d14bce08e0a1.jar \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\dexedLibs\jME3-core-631675ff972ce9f155d8a4808fcf9098.jar \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\dexedLibs\MyGame-0e2f07751ee09baa1ccac4721eae5cd8.jar \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\dexedLibs\j-ogg-vorbisd-6c81362c572ee347e5bad67ad616cda4.jar \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\dexedLibs\nifty-style-black-a0aaf52e70e5184a5f68520a23f51a0e.jar \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\dexedLibs\j-ogg-oggd-8dca1c7dfb511f8711aec61b39557d1a.jar \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\dexedLibs\eventbus-09c461905ce7eca4f2d3eb58ff2afa15.jar \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\dexedLibs\jME3-bullet-b43cf75f907e8cd9933c3b4d9c8c15d1.jar \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\dexedLibs\jME3-effects-4491c2ef75a694f8b3a0764a9e1d813d.jar \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\dexedLibs\jME3-terrain-d075f1473fd65afdaa70ecf8e0022416.jar \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\dexedLibs\xmlpull-xpp3-ee673c4382215d422ed6cd5a7c0837dc.jar \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\dexedLibs\jME3-networking-906a70fcd5b0c91d0ea7dc0dc349f792.jar \
-R:\GitHub\Ny mapp\OurGame\mobile\bin\dexedLibs\nifty-cf6ac568d1bf12bb0380b959cc43b1d5.jar \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\classes.dex : \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\classes\com\mycompany\mygame\BuildConfig.class \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\classes\com\mycompany\mygame\MainActivity.class \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\classes\com\mycompany\mygame\R$attr.class \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\classes\com\mycompany\mygame\R$drawable.class \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\classes\com\mycompany\mygame\R$layout.class \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\classes\com\mycompany\mygame\R$string.class \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\classes\com\mycompany\mygame\R.class \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\dexedLibs\jME3-jogg-4472543512787330c8a3d2a74a1dc352.jar \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\dexedLibs\jME3-android-415a3bbb9d10d4302ffa148ee419a9a9.jar \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\dexedLibs\jME3-plugins-d8550ceb3ecad12e597c5d6c38623395.jar \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\dexedLibs\nifty-default-controls-47f6a91a7b571a1148c1c4bfc87c609b.jar \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\dexedLibs\jME3-niftygui-904bd6e2ea094091e1449ad33c68cda5.jar \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\dexedLibs\jME3-core-bac818be90c3863f803f70c2eacbc140.jar \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\dexedLibs\MyGame-39695380353da7b2b9bf29b27ca664ac.jar \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\dexedLibs\j-ogg-vorbisd-a4cac3364ab7990784b7f31003f9e1fa.jar \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\dexedLibs\nifty-style-black-cbd3fd5bffe8ab7715bdcf7a6c56b7a9.jar \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\dexedLibs\j-ogg-oggd-2c89842095725d1d6dd0dd0a8b196620.jar \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\dexedLibs\eventbus-bd05a50ae2c60bcc0e1e7f734cc5a4c5.jar \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\dexedLibs\jME3-bullet-0e63d7e94c590dade2bbcbad76e5428d.jar \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\dexedLibs\jME3-effects-a2555d5f335317af7c7c017127715f9d.jar \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\dexedLibs\jME3-terrain-b6be313873b65168f9d3ed5d0bb08c0e.jar \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\dexedLibs\xmlpull-xpp3-6ec689578d71d84440db2a9323c620e2.jar \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\dexedLibs\jME3-networking-a3091f10814260f1ff48c7ffddd1d454.jar \
+C:\Users\stoscheline2150\Documents\GitHub\OurGame\mobile\bin\dexedLibs\nifty-59be60b08d70494ca1b331d48ecf0092.jar \

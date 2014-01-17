@@ -64,10 +64,11 @@ public class Setup {
         
         // <editor-fold defaultstate="collapsed" desc="Player">
         Game.player = new Player();
-        Game.player.model = aM.loadModel("Models/SUP.j3o");          
+        //Game.player.model = aM.loadModel("Models/SUP.j3o");
+        Game.player.model = aM.loadModel("Models/Player/SUP.j3o");
         Game.player.model.scale(0.3f);
         Game.player.model.setLocalTranslation(0, 1.5f, 0);       
-        Game.player.model.rotate(FastMath.QUARTER_PI, FastMath.PI, 0);
+        Game.player.model.rotate(FastMath.PI*(0.8f), FastMath.PI, 0);
         //Game.player.setMaterial(modelmat);        
         
         // </editor-fold>
@@ -82,7 +83,7 @@ public class Setup {
         red = new Material(aM, 
                 "Common/MatDefs/Misc/Unshaded.j3md");
         
-        playerTex = aM.loadTexture("Textures/playerTex.png");
+        playerTex = aM.loadTexture("Models/Player/playerTex.png");
         
         treemat = red.clone();
         treemat.setTexture("ColorMap", aM.loadTexture("Textures/treeTex.png"));
