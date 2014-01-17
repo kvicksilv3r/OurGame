@@ -4,32 +4,31 @@
  */
 package mygame;
 
+<<<<<<< HEAD
+=======
 import com.jme3.bounding.BoundingBox;
 import com.jme3.collision.CollisionResult;
 import com.jme3.collision.CollisionResults;
+>>>>>>> 5503efa1f0df33094e601f6e57b428916c0753cf
 import com.jme3.input.InputManager;
 import com.jme3.input.KeyInput;
 import com.jme3.input.controls.AnalogListener;
 import com.jme3.input.controls.KeyTrigger;
+<<<<<<< HEAD
+=======
 import com.jme3.input.controls.TouchListener;
 import com.jme3.input.event.TouchEvent;
 import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
+>>>>>>> 5503efa1f0df33094e601f6e57b428916c0753cf
 import com.jme3.math.FastMath;
 import com.jme3.math.Ray;
 import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
-import com.jme3.renderer.RenderManager;
-import com.jme3.renderer.queue.RenderQueue.Bucket;
-import com.jme3.scene.Geometry;
 import com.jme3.scene.Node;
-import com.jme3.scene.Spatial;
-import com.jme3.scene.shape.Box;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Game {
-    
     public static Game game;
 
     public InputManager inputManager;
@@ -69,9 +68,9 @@ public class Game {
     
     private void initKeys() {
     // You can map one or several inputs to one named action
-    inputManager.addMapping("UP",  new KeyTrigger(KeyInput.KEY_UP));
-    inputManager.addMapping("LEFT",   new KeyTrigger(KeyInput.KEY_LEFT));
-    inputManager.addMapping("RIGHT",  new KeyTrigger(KeyInput.KEY_RIGHT));
+    inputManager.addMapping("UP", new KeyTrigger(KeyInput.KEY_UP));
+    inputManager.addMapping("LEFT", new KeyTrigger(KeyInput.KEY_LEFT));
+    inputManager.addMapping("RIGHT", new KeyTrigger(KeyInput.KEY_RIGHT));
     inputManager.addMapping("DOWN", new KeyTrigger(KeyInput.KEY_DOWN));        
     // Add the names to the action listener.
     inputManager.addListener(analogListener,"LEFT", "RIGHT", "UP", "DOWN");
@@ -132,9 +131,9 @@ public class Game {
     };
 
     public void gameUpdate(float tpf) {
-               
         timer += tpf;
         player.model.setLocalTranslation(player.position);
+        
         
         sinx += 0.1;
         
@@ -153,7 +152,8 @@ public class Game {
             {
                 for(mygame.Props.Prop p : props)
                 {
-                    if(p.index == c.index)
+                    //if(p.index == c.index)
+                    if(p.c.equals(c))
                     {
                         rootNode.detachChild(p.model);
                     }
@@ -163,24 +163,30 @@ public class Game {
                 c.last = true;
                 
                 //This is experimental
-                Spawner.spawnProps(c.index, rootNode);
+                Spawner.spawnProps(c, rootNode);
             }
             
             c.position = c.model.getLocalTranslation();
             
             for(mygame.Props.Prop p : props)
             {
-                if(p.index == c.index)
+                //if(p.index == c.index)
+                if(p.c.equals(c))
                 {
-                    p.model.setLocalTranslation(new Vector3f(c.position.x + p.offsetPos.x - extent.x, c.position.y + p.offsetPos.y, c.position.z + p.offsetPos.z - extent.z));
-
+                    p.model.setLocalTranslation(
+                        new Vector3f(
+                            c.position.x + p.offsetPos.x - extent.x,
+                            c.position.y + p.offsetPos.y,
+                            c.position.z + p.offsetPos.z - extent.z
+                        )
+                    );
                 }
             }
             
         } 
         
         // </editor-fold>
-        
+
         // <editor-fold defaultstate="collapsed" desc="Player Movement">
                 
         if(nextLane > 3)
@@ -273,7 +279,7 @@ public class Game {
                         if((player.position.x + (0.52*extent.x)*4*tpf) > defaultPos.x)
                         {
                             goingRight = false;
-                            currLane = 3;
+                            currLane = 2;
                             player.position.x = defaultPos.x;
                         }
                         else if(player.position.x < defaultPos.x)
