@@ -44,6 +44,8 @@ public class Setup {
     public static Material blu;
     public static Material grn;
     
+
+    
     public static void setItUp(AssetManager aM, Node localRootNode){
                 
         // <editor-fold defaultstate="collapsed" desc="Lighting">
@@ -139,7 +141,7 @@ public class Setup {
         mygame.Props.Props.ropetree.scale(0.5f);
         
         
-        // </editor-fold>        
+        // </editor-fold>     
         
         // <editor-fold defaultstate="collapsed" desc="Planes/Cells">
         localRootNode.attachChild(SkyFactory.createSky(
@@ -180,10 +182,20 @@ public class Setup {
             localRootNode.attachChild(c.model);            
             Game.game.cells.add(c);
         }
-        // </editor-fold>  
+        // </editor-fold>   
         
-        Spawner.spawnProps(6, localRootNode);      
-       
+        // <editor-fold defaultstate="collapsed" desc="PlayerBoundingBox">
+        /*Vector3f c = new Vector3f();
+        
+        float x = 1;
+        float z = 1;
+        float y = 1
+        
+        public BoundingBox(c,
+                float x,
+                float y,
+                float z;*/
+        // </editor-fold>
         
     }
 }
