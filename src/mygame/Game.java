@@ -62,10 +62,10 @@ public class Game  {
         initKeys();
         
         //Animation
-        playerControl = player.model.getControl(AnimControl.class);
-        playerControl.addListener(AnimListener);
-        playerChannel = playerControl.createChannel();
-        playerChannel.setAnim("my_animation");
+        //playerControl = player.model.getControl(AnimControl.class);
+        //playerControl.addListener(AnimListener);
+        //playerChannel = playerControl.createChannel();
+        //playerChannel.setAnim("my_animation");
     }
     
     private void initKeys() {
