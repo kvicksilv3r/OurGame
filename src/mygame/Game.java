@@ -100,13 +100,24 @@ public class Game  {
      */
     public TouchListener touchListener = new TouchListener() {
         public void onTouch(String name, TouchEvent evt, float tpf) {
-            if(evt.getType() != TouchEvent.Type.DOWN) return;
-
-            startTouchPos.x = evt.getX();
-            startTouchPos.y = evt.getY();
+            //if(evt.getType() != TouchEvent.Type.DOWN) return;
             
+            switch(evt.getType()){
+                case DOWN:
+                    startTouchPos.x = evt.getX();
+                    startTouchPos.y = evt.getY();                    
+                    break;
+                    
+                case MOVE:
+                    curTouchPos.x = evt.getX();
+                    curTouchPos.y = evt.getY();
+                    break;
+                    
+            }
         }
-    };  
+    };
+    
+
 
     boolean goingUp = false;
     boolean goingDown = false;
@@ -160,7 +171,8 @@ public class Game  {
         timer += tpf;
         player.model.setLocalTranslation(player.position);
         
-        devText.setText("TouchPos is " + startTouchPos.x + " , " + startTouchPos.y);
+        devText.setText("TouchPos is " + startTouchPos.x + " , " + 
+                startTouchPos.y + "    CurPos is " + curTouchPos.x + "," + curTouchPos.y);
         
         
         sinx += 0.1;
