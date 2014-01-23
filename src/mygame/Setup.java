@@ -37,6 +37,8 @@ public class Setup {
     public static Material blu;
     public static Material grn;
     
+    public static mygame.Props.BoundingBox PlayerBbox;
+    
 
     
     public static void setItUp(AssetManager aM, Node localRootNode){
@@ -182,8 +184,8 @@ public class Setup {
         Vector3f VplayerBbox = new Vector3f(1,
                 1,
                 1);
-        mygame.Props.BoundingBox playerBbox = new mygame.Props.BoundingBox(VplayerBbox, 1, 1, 1);
+        Game.player.playerBbox = new mygame.Props.BoundingBox(VplayerBbox, 1, 1, 1);
         // </editor-fold>
-        
+         
     }
 }

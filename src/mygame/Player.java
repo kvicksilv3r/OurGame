@@ -12,6 +12,7 @@ import com.jme3.scene.Spatial;
  * @author stoscheline2150
  */
 public class Player {
-    public  Vector3f position;
-    public  Spatial model;
+    public Vector3f position;
+    public Spatial model;
+    public mygame.Props.BoundingBox playerBbox;
 }

@@ -1,15 +1,12 @@
 /*
  * This is where the magic happens, mess around with what you want, but
- * don't commit anjything to the git, i don't want to break things even more xD
+ * don't commit anything to the git, i don't want to break things even more xD
  */
 package mygame;
 
 import com.jme3.animation.AnimChannel;
 import com.jme3.animation.AnimControl;
 import com.jme3.animation.AnimEventListener;
-import com.jme3.cinematic.events.MotionEvent;
-import com.jme3.collision.CollisionResult;
-import com.jme3.collision.CollisionResults;
 import com.jme3.font.BitmapText;
 import com.jme3.input.InputManager;
 import com.jme3.input.KeyInput;
@@ -18,12 +15,9 @@ import com.jme3.input.controls.KeyTrigger;
 import com.jme3.input.controls.TouchListener;
 import com.jme3.input.event.TouchEvent;
 import com.jme3.math.FastMath;
-import com.jme3.math.Ray;
 import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
-import com.jme3.renderer.Camera;
 import com.jme3.scene.Node;
-import de.lessvoid.nifty.loaderv2.types.apply.Convert;
 import java.util.ArrayList;
 
 public class Game  {
@@ -333,6 +327,12 @@ public class Game  {
             
         
         
+        
+        // </editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Player Bounding Box Position">
+        
+        player.playerBbox.pos = player.position;
         
         // </editor-fold>
     }
