@@ -99,6 +99,8 @@ public class Game  {
             
             switch(evt.getType()){
                 case DOWN:
+                    curTouchPos.x = evt.getX();
+                    curTouchPos.y = evt.getY();
                     startTouchPos.x = evt.getX();
                     startTouchPos.y = evt.getY();                    
                     break;
@@ -107,6 +109,14 @@ public class Game  {
                     curTouchPos.x = evt.getX();
                     curTouchPos.y = evt.getY();
                     break;
+                    
+                case UP:
+                    curTouchPos.x = 0;
+                    curTouchPos.y = 0;
+                    startTouchPos.x = 0;
+                    startTouchPos.y = 0; 
+                    break;
+                    
                     
             }
         }
@@ -173,6 +183,53 @@ public class Game  {
         sinx += 0.1;
         
         if(timer > 1) { timer = 0; }
+        
+        // <editor-fold defaultstate="collapsed" desc="TouchControler">
+        
+        if(startTouchPos.x - curTouchPos.x > 200)
+        {
+            //Go left
+            goingLeft = true; 
+            goingRight = false;
+            startTouchPos.x = curTouchPos.x;
+            startTouchPos.y = curTouchPos.y; 
+                
+        
+            nextLane -= 1;
+        }
+        else if(startTouchPos.x - curTouchPos.x < -200){
+            // go right
+            goingRight = true;
+            goingLeft = false;
+            nextLane += 1;
+            startTouchPos.x = curTouchPos.x;
+            startTouchPos.y = curTouchPos.y; 
+        }
+        
+        if(startTouchPos.y - curTouchPos.y > 150)
+        {
+            //Go down
+            if(!goingDown && !goingUp)
+              {
+              goingDown = true;        
+              sinx = 0.55f; 
+              }
+            startTouchPos.x = curTouchPos.x;
+            startTouchPos.y = curTouchPos.y; 
+        }
+        
+        else if(startTouchPos.y - curTouchPos.y < -150){
+            // go up
+            if(!goingUp && !goingDown)
+              {
+              goingUp = true;        
+              sinx = 0.55f; 
+              }  
+            startTouchPos.x = curTouchPos.x;
+            startTouchPos.y = curTouchPos.y; 
+        }
+        
+        // </editor-fold>
         
         // <editor-fold defaultstate="collapsed" desc="Cell for-loop">
         
