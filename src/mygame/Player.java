@@ -4,6 +4,7 @@
  */
 package mygame;
 
+import com.jme3.bounding.BoundingBox;
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Spatial;
 
@@ -14,5 +15,13 @@ import com.jme3.scene.Spatial;
 public class Player {
     public Vector3f position;
     public Spatial model;
+    //public static Vector3f playerExtent;
     public static Vector3f playerExtent;
+    
+    public Vector3f plbboxv3f = new Vector3f(0,0,0);
+    public float plx;
+    public float ply;
+    public float plz;
+    
+    public BoundingBox PlayerBox = new BoundingBox(plbboxv3f, plx, ply, plz);
 }

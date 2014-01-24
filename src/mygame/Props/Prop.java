@@ -14,7 +14,7 @@ public class Prop {
     public float x;
     public float y;
     public float z;
-    public BoundingBox PropBox = new BoundingBox(bboxv3f , x, y, z);
+    public BoundingBox PropBox = new BoundingBox(bboxv3f, x, y, z);
     
     
     // Declares what object it is. 1 for tombstone, 2 for tree etcetc

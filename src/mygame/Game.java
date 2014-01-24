@@ -7,6 +7,7 @@ package mygame;
 import com.jme3.animation.AnimChannel;
 import com.jme3.animation.AnimControl;
 import com.jme3.animation.AnimEventListener;
+import com.jme3.bounding.BoundingBox;
 import com.jme3.font.BitmapText;
 import com.jme3.input.InputManager;
 import com.jme3.input.KeyInput;
@@ -386,6 +387,6 @@ public class Game  {
         
         
         // </editor-fold>
-      
+        player.PlayerBox = new BoundingBox(player.position, player.playerExtent.x, player.playerExtent.y, player.playerExtent.z);
     }
 }
