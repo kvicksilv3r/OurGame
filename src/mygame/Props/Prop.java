@@ -8,7 +8,7 @@ public class Prop {
     //public int index;
     public mygame.Cell c;
     public Vector3f offsetPos;
-    public BoundingBox propBox;
+
     
     // Declares what object it is. 1 for tombstone, 2 for tree etcetc
     public int type;

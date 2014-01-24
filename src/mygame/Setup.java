@@ -35,11 +35,7 @@ public class Setup {
     public static Material eyemat;
     public static Material red;
     public static Material blu;
-    public static Material grn;
-    
-    public static mygame.Props.BoundingBox PlayerBbox;
-    
-
+    public static Material grn; 
     
     public static void setItUp(AssetManager aM, Node localRootNode){
                 

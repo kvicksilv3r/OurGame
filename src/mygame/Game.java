@@ -329,17 +329,6 @@ public class Game  {
         
         
         // </editor-fold>
-
-        // <editor-fold defaultstate="collapsed" desc="Player Bounding Box Position">
-        
-        player.playerBbox.pos = player.position;
-        
-        // </editor-fold>
-        
-        // <editor-fold defaultstate="collapsed" desc="Collision Detection">
-        
-        //player.position.x + 
-        
-        // </editor-fold>
+      
     }
 }

@@ -30,7 +30,7 @@ public class Spawner {
             p.offsetPos = new Vector3f(FastMath.nextRandomFloat() * 2*Game.extent.x, 0, FastMath.nextRandomFloat()* 2 * Game.extent.z);
             //p.index = index;
             p.c = c;
-            p.propBox = new mygame.Props.BoundingBox(p.offsetPos, 1, 1, 1);
+            
             Game.game.props.add(p);
             
             switch(wts)
