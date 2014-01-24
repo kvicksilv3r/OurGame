@@ -67,6 +67,7 @@ public class Setup {
         Game.player.model.scale(0.3f);
         Game.player.model.setLocalTranslation(0, 1.5f, 0);       
         Game.player.model.rotate(FastMath.PI*(0.8f), FastMath.PI, 0);
+        
         //Game.player.setMaterial(modelmat);        
         
         // </editor-fold>
