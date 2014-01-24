@@ -4,6 +4,7 @@
  */
 package mygame;
 
+import com.jme3.bounding.BoundingBox;
 import com.jme3.math.FastMath;
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Node;
@@ -27,9 +28,12 @@ public class Spawner {
             wts = FastMath.nextRandomInt(1, 5);
         
             mygame.Props.Prop p = new mygame.Props.Prop();
+            mygame.Props.Props d = new mygame.Props.Props();
             p.offsetPos = new Vector3f(FastMath.nextRandomFloat() * 2*Game.extent.x, 0, FastMath.nextRandomFloat()* 2 * Game.extent.z);
             //p.index = index;
             p.c = c;
+            
+            
             
             Game.game.props.add(p);
             
@@ -37,18 +41,23 @@ public class Spawner {
             {
                 case 1:
                     p.model = mygame.Props.Props.tombstone1.clone();
+                    p.PropBox = new BoundingBox (p.offsetPos, d.tombstoneExtent.x, d.tombstoneExtent.y, d.tombstoneExtent.z);
                     break;
                 case 2:
                     p.model = mygame.Props.Props.ghost.clone();
+                    p.PropBox = new BoundingBox (p.offsetPos, d.ghostExtent.x, d.ghostExtent.y, d.ghostExtent.z);
                     break;
                 case 3:
                     p.model = mygame.Props.Props.tree.clone();
+                    p.PropBox = new BoundingBox (p.offsetPos, d.treeExtent.x, d.treeExtent.y, d.treeExtent.z);
                     break;
                 case 4:
                     p.model = mygame.Props.Props.ropetree.clone();
+                    p.PropBox = new BoundingBox (p.offsetPos, d.ropetreeExtent.x, d.ropetreeExtent.y, d.ropetreeExtent.z);
                     break;
                 case 5:
                     p.model = mygame.Props.Props.eye.clone();
+                    p.PropBox = new BoundingBox (p.offsetPos, d.eyeExtent.x, d.eyeExtent.y, d.eyeExtent.z);
                     break;
                 default:
                     //raise exception?

@@ -132,6 +132,11 @@ public class Setup {
         mygame.Props.Props.tree.scale(0.5f);
         mygame.Props.Props.ropetree.scale(0.5f);
         
+        mygame.Props.Props.tombstoneExtent = ((BoundingBox) mygame.Props.Props.tombstone1.getWorldBound()).getExtent(new Vector3f());
+        mygame.Props.Props.ghostExtent = ((BoundingBox) mygame.Props.Props.ghost.getWorldBound()).getExtent(new Vector3f());
+        mygame.Props.Props.treeExtent = ((BoundingBox) mygame.Props.Props.tree.getWorldBound()).getExtent(new Vector3f());
+        mygame.Props.Props.ropetreeExtent = ((BoundingBox) mygame.Props.Props.ropetree.getWorldBound()).getExtent(new Vector3f());
+        mygame.Props.Props.eyeExtent = ((BoundingBox) mygame.Props.Props.eye.getWorldBound()).getExtent(new Vector3f());
         
         // </editor-fold>     
         
