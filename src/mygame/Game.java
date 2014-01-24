@@ -335,5 +335,11 @@ public class Game  {
         player.playerBbox.pos = player.position;
         
         // </editor-fold>
+        
+        // <editor-fold defaultstate="collapsed" desc="Collision Detection">
+        
+        //player.position.x + 
+        
+        // </editor-fold>
     }
 }

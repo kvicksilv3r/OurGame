@@ -145,6 +145,8 @@ public class Setup {
         
         Game.extent = ((BoundingBox) plane.getWorldBound()).getExtent(new Vector3f());
         
+        Player.playerExtent = ((BoundingBox) Game.player.model.getWorldBound()).getExtent(new Vector3f());
+        
         plane.setMaterial(modelmat);
         plane.scale(1.5f, 1, 1);
         
@@ -179,13 +181,5 @@ public class Setup {
             Game.game.cells.add(c);
         }
         // </editor-fold>   
-        
-        //<editor-fold defaultstate="collapsed" desc="PlayerBoundingBox">
-        Vector3f VplayerBbox = new Vector3f(1,
-                1,
-                1);
-        Game.player.playerBbox = new mygame.Props.BoundingBox(VplayerBbox, 1, 1, 1);
-        // </editor-fold>
-         
     }
 }

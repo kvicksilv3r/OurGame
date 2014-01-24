@@ -14,5 +14,7 @@ import com.jme3.scene.Spatial;
 public class Player {
     public Vector3f position;
     public Spatial model;
-    public mygame.Props.BoundingBox playerBbox;
+    public static Vector3f playerExtent;
+    public mygame.Props.BoundingBox playerBbox = new mygame.Props.BoundingBox(position,
+            playerExtent.x, playerExtent.y, playerExtent.z);
 }

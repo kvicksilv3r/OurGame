@@ -20,9 +20,9 @@ public class BoundingBox {
         float _y,
         float _z)
     {
-        pos = _pos;
+        /*pos = _pos;
         x = _x;
         y = _y;
-        z = _z;
+        z = _z;*/
     }
 }
