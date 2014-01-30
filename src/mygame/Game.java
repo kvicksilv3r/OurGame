@@ -46,6 +46,8 @@ public class Game  {
     public Vector3f leftLane;    
     public Vector3f rightLane;
     
+    public String tjong = "Nej";
+    
     public ArrayList<Cell> cells;
     public ArrayList<mygame.Props.Prop> props;
     
@@ -177,7 +179,8 @@ public class Game  {
         player.model.setLocalTranslation(player.position);
         
         devText.setText("TouchPos is " + startTouchPos.x + " , " + 
-                startTouchPos.y + "    CurPos is " + curTouchPos.x + "," + curTouchPos.y);
+                startTouchPos.y + "    CurPos is " + curTouchPos.x + "," + curTouchPos.y
+                + tjong);
         
         
         sinx += 0.1;
@@ -387,6 +390,16 @@ public class Game  {
         
         
         // </editor-fold>
-        player.PlayerBox = new BoundingBox(player.position, player.playerExtent.x, player.playerExtent.y, player.playerExtent.z);
+        // updates the player characters boundingbox to the player characters position and size;
+        player.PlayerBox = new BoundingBox(player.position, Player.playerExtent.x, Player.playerExtent.y, Player.playerExtent.z);
+        player.PlayerBox.setCenter(player.position);
+        //boolean intersectsBoundingBox(BoundingBox p.PropBox);
+        for(mygame.Props.Prop p : props)
+        {
+            if(player.PlayerBox.intersectsBoundingBox(p.PropBox)){
+                tjong = "Joförfan";
+            }
+            
+        }
     }
 }

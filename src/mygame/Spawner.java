@@ -16,7 +16,7 @@ import com.jme3.scene.Node;
 public class Spawner {
 
     public static int wts;
-    public static boolean forrest = true;
+    public static boolean forrest = false;
     
     public static void spawnProps(Cell c, Node localRootNode)
     {
